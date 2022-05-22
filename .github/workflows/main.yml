@@ -1,0 +1,15 @@
+name: autorun
+on:
+  schedule:
+    - cron: "5 * * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  autorun:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run code
+        run: python3 run.py
